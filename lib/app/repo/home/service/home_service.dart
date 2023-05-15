@@ -11,12 +11,12 @@ class HomeService {
     final response = await http.post(
       Uri.parse('https://itransport.iconpln.co.id/api/?u=login'),
       headers: <String, String>{
-        'Content-Type': 'application/json; charset=UTF-8',
+        'Content-Type': 'application/x-www-form-urlencoded',
       },
-      body: jsonEncode(<String, String>{
+      body: {
         'username': username,
         'password' : password,
-      }),
+      },
     );
 
     print(response.statusCode);
